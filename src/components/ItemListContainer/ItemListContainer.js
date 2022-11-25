@@ -1,16 +1,22 @@
-
+import {Card} from 'react-bootstrap';
+import './ItemListContainer.css'
 
 export const ItemListContainer = (greeting) => {
 
-    const {titulo,content} = greeting
+    const {titulo,subtitulo,content} = greeting
 
 
     return(
-        <article>
-            <div>
-                <h5>{titulo}</h5>
-                <p>{content}</p>
-            </div>
+        <article className='articulo'>
+            <Card border="success" style={{ width: '18rem' }}>
+                <Card.Header>{titulo}</Card.Header>
+                <Card.Body>
+                    <Card.Title>{subtitulo}</Card.Title>
+                    <Card.Text>
+                        {content}
+                    </Card.Text>
+                </Card.Body>
+            </Card>
         </article>
     )
 }
