@@ -27,7 +27,7 @@ export const NavBar = () => {
                             <Nav.Link href="#action3" className='colorVerd'>
                                 Computadoras
                             </Nav.Link>
-                            <NavDropdown title="Celulares" id="navbarScrollingDropdown">
+                            <NavDropdown title="Celulares" id="navbarScrollingDropdown" className='colorVerd'>
                                 <NavDropdown.Item href="#action3" className='colorVerd'>Apple</NavDropdown.Item>
                                 <NavDropdown.Item href="#action4" className='colorVerd'>
                                     Android
