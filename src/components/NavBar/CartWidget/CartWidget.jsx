@@ -8,7 +8,7 @@ export const CartWidget = () => {
                 <div className="navbar-brand row" href="#">
                     <BsCartCheck className="svg"/>
                     <p className="contador">9</p>
-                </div> 
+                </div>
             </div>
         </div>
     )

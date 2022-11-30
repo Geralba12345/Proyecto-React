@@ -14,6 +14,7 @@ export const NavBar = () => {
         <header>
             <Navbar className='navegacionBar' bg="light" expand="lg">
                 <Container fluid>
+                    <img src='https://res.cloudinary.com/dmqlbztrm/image/upload/v1669773133/TheNewNow_crowdcell_shutterstock_526062973_pl77rb.jpg' alt='Logo de marca' className='logMarc'/>
                     <Navbar.Brand href="#" className='colorVerd'>ELEKTRONIKA</Navbar.Brand>
                     <Navbar.Toggle aria-controls="navbarScroll" />
                     <Navbar.Collapse id="navbarScroll">
