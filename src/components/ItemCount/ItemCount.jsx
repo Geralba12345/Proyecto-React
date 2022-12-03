@@ -6,7 +6,7 @@ const ItemCount = ({stock,initial}) => {
   
   const [conteo, setConteo] = useState(initial)
   
-  
+
   
   return (
     <>

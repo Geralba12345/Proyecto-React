@@ -1,17 +1,35 @@
 import {Card} from 'react-bootstrap';
 import './ItemListContainer.css'
 import ItemCount from "../ItemCount/ItemCount"
-import {products} from "../../productsMock"
+import {productos} from '../../productosMock';
+import { useEffect, useState } from 'react';
+
 
 
 export const ItemListContainer = (greeting) => {
 
     const {titulo,subtitulo,content} = greeting
 
-    console.log({products})
+    const [ items, setItems ] = useState([])
 
 
+    useEffect(()=>{
+        const task = new Promise ((resolve,reject)=>{
+            setTimeout(()=>{
+                resolve(productos)
+            },2000)
+        })
+    
+    
+        task
+            .then((res)=>{setItems(res)})
+            .catch((err)=>{console.log("Su solicitud fue rechazada")})
 
+    }, [] )
+
+
+    console.log(items)
+    
 
     return(
         <article>

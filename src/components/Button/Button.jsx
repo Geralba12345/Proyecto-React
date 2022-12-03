@@ -24,7 +24,7 @@ const Button = ({conteo,setConteo})=>{
           <>
             <button onClick={suma}>+</button>
             <button onClick={resta}>-</button>
-            <button onClick={onAdd}>Agregar al carrito</button>
+            <button onClick={()=>{onAdd()}}>Agregar al carrito</button>
           </>
     )
 }
