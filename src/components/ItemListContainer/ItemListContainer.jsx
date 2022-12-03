@@ -1,14 +1,21 @@
 import {Card} from 'react-bootstrap';
 import './ItemListContainer.css'
+import ItemCount from "../ItemCount/ItemCount"
+import {products} from "../../productsMock"
+
 
 export const ItemListContainer = (greeting) => {
 
     const {titulo,subtitulo,content} = greeting
 
+    console.log({products})
+
+
+
 
     return(
-        <article className='articulo'>
-            <Card border="success" style={{ width: '18rem' }}>
+        <article>
+            <Card className='articulo' border="success" style={{ width: '18rem' }}>
                 <Card.Header>{titulo}</Card.Header>
                 <Card.Body>
                     <Card.Title>{subtitulo}</Card.Title>
@@ -17,6 +24,7 @@ export const ItemListContainer = (greeting) => {
                     </Card.Text>
                 </Card.Body>
             </Card>
+            <ItemCount stock={5} initial={1}/>
         </article>
     )
 }
