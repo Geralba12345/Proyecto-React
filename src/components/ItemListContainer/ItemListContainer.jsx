@@ -3,6 +3,7 @@ import './ItemListContainer.css'
 import ItemCount from "../ItemCount/ItemCount"
 import {productos} from '../../productosMock';
 import { useEffect, useState } from 'react';
+import ItemList from "../ItemList/ItemList"
 
 
 
@@ -27,8 +28,6 @@ export const ItemListContainer = (greeting) => {
 
     }, [] )
 
-
-    console.log(items)
     
 
     return(
@@ -43,6 +42,7 @@ export const ItemListContainer = (greeting) => {
                 </Card.Body>
             </Card>
             <ItemCount stock={5} initial={1}/>
+            <ItemList items={items}/>
         </article>
     )
 }

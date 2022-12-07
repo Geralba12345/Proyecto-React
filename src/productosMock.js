@@ -1,6 +1,7 @@
 
 export const productos = [
     {
+        id:1,
         name: "nike 360",
         price: 20500,
         stock: 5,
@@ -9,6 +10,7 @@ export const productos = [
         img: "https://res.cloudinary.com/dnqfh2chg/image/upload/v1669326932/free-metcon-4-zapatillas-de-entrenamiento-TQMCZg_fvia3m.png"
     },
     {
+        id:2,
         name: "wilson advance",
         price: 14500,
         stock: 5,
@@ -17,6 +19,7 @@ export const productos = [
         img: "https://res.cloudinary.com/dnqfh2chg/image/upload/v1669430010/foc364fsakkzmausrovn.jpg"
     },
     {
+        id:3,
         name: "Puma",
         price: 19000,
         stock: 5,
@@ -25,6 +28,7 @@ export const productos = [
         img: "https://res.cloudinary.com/dnqfh2chg/image/upload/v1669430165/images_lujpmr.jpg"
     },
     {
+        id:4,
         name: "Jaguar",
         price: 17800,
         stock: 5,
