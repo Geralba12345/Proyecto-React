@@ -10,7 +10,7 @@ const ItemCount = ({stock,initial}) => {
   
   return (
     <>
-      <Button conteo={conteo} setConteo={setConteo}/>
+      <Button conteo={conteo} setConteo={setConteo} stock={stock}/>
       <h2>{conteo}</h2>
     </>
   )

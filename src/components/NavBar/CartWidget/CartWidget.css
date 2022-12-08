@@ -7,3 +7,16 @@
     justify-content: center;
 }
 
+.contenedor{
+    width: 20px;
+    height: 20px;
+    border: 2px solid green;
+    border-radius: 50%;
+    position: absolute;
+    top: 21%;
+    right: 330px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
