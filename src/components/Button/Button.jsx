@@ -1,4 +1,6 @@
-
+import ToggleButton from 'react-bootstrap/ToggleButton';
+import ToggleButtonGroup from 'react-bootstrap/ToggleButtonGroup';
+import './Button.css';
 
 const Button = ({conteo,setConteo,stock})=>{
 
@@ -23,9 +25,18 @@ const Button = ({conteo,setConteo,stock})=>{
 
     return(
           <>
-            <button onClick={suma}>+</button>
-            <button onClick={resta}>-</button>
-            <button onClick={()=>{onAdd()}}>Agregar al carrito</button>
+          <ToggleButtonGroup type="checkbox" className='botonera'>
+            <ToggleButton id="tbg-btn-1" onClick={suma}>
+                +
+            </ToggleButton>
+            <ToggleButton id="tbg-btn-2" onClick={resta}>
+                -
+            </ToggleButton>
+            <ToggleButton id="tbg-btn-3" onClick={()=>{onAdd()}}>
+                Agregar al carrito
+            </ToggleButton>
+            <h2 className='numero'>{conteo}</h2>
+           </ToggleButtonGroup>
           </>
     )
 }

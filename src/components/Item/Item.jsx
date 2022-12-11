@@ -1,12 +1,20 @@
 import {Link} from "react-router-dom"
+import Card from 'react-bootstrap/Card';
+import './Item.css'
 
 const Item = ({element}) => {
     return (
       <div>
-          <h2>{element.name}</h2>
-          <h3>${element.price}</h3>
-          <img src={element.img} alt="Imagen de producto" />
-          <Link to={`/ItemDetail/${element.id}`}>Ver detalles</Link>
+        <Card style={{ width: '18rem' }} className='cartas'>
+          <Card.Img variant="top" src={element.img} alt="Imagen de producto" />
+          <Card.Body>
+            <Card.Title>{element.name}</Card.Title>
+            <Card.Text>
+              ${element.price}
+            </Card.Text>
+            <Link variant="primary" to={`/ItemDetail/${element.id}`}>Ver detalles</Link>
+          </Card.Body>
+        </Card>
       </div>
     )
 }

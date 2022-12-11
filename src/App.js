@@ -12,6 +12,8 @@ function App() {
       <Routes>
 
         <Route path="/" element={<ItemListContainer/>} />
+        <Route path="/category/:categoryName" element={<ItemListContainer/>} />
+
         <Route path="/category" element={<ItemListContainer/>} />
 
         <Route path="/ItemDetail/:id" element={<ItemDetailContainer/>} />
@@ -31,10 +33,4 @@ function App() {
 export default App;
 
 
-/*<div>
-<NavBar/>
-<ItemListContainer titulo = "Bienvenido a Electrónika"
-content = "Los mejores precios para los productos tecnológicos que le hacen falta"
-subtitulo = "El lugar ideal para usted" />
-<ItemDetailContainer/>
-</div>*/
+
