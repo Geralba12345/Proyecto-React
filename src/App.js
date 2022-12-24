@@ -2,6 +2,7 @@ import ItemDetailContainer from "./components/ItemDetailContainer/ItemDetailCont
 import {ItemListContainer} from "./components/ItemListContainer/ItemListContainer"
 import {NavBar} from "./components/NavBar/NavBar"
 import {BrowserRouter, Routes, Route} from "react-router-dom"
+import Form from "./components/Form/Form";
 
 function App() {
   return (
@@ -17,6 +18,8 @@ function App() {
         <Route path="/category" element={<ItemListContainer/>} />
 
         <Route path="/ItemDetail/:id" element={<ItemDetailContainer/>} />
+
+        <Route path="/checkout" element={<Form/>} />
 
         <Route path="/cart" element={<h1>Acá va el carrito</h1>} />
 
