@@ -1,10 +1,11 @@
 import Button from "../Button/Button"
 import {useState} from "react"
 
-const ItemCount = ({stock,initial}) => {
+const ItemCount = ({stock,initial,}) => {
   
   
   const [conteo, setConteo] = useState(initial)
+
   
 
   

@@ -1,7 +1,12 @@
 import Card from 'react-bootstrap/Card';
 import ListGroup from 'react-bootstrap/ListGroup';
+import ItemCount from '../ItemCount/ItemCount';
+
 
 const ItemDetail = ( {product} ) => {
+
+  
+
 
   
   return (
@@ -18,6 +23,7 @@ const ItemDetail = ( {product} ) => {
         <ListGroup.Item>${product.price}</ListGroup.Item>
       </ListGroup>
     </Card>
+    <ItemCount stock={5} initial={1}/>
     </div>
   )
 }
