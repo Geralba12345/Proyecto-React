@@ -1,8 +1,18 @@
 import "./CartWidget.css";
 import { BsCartCheck} from "react-icons/bs"
 import {Link} from "react-router-dom"
+import { useContext } from "react";
+import { CartContext } from "../../../context/CartContext";
+
+
 
 export const CartWidget = () => {
+    
+
+    const {cart} = useContext( CartContext )
+
+
+
     return (
         <Link to="/cart">
             <div>
@@ -11,7 +21,7 @@ export const CartWidget = () => {
                         <BsCartCheck className="svg"/>
                     </div>
                     <div className="contenedor">
-                        <span>9</span>
+                        <span>{cart.length}</span>
                     </div>
                 </div>
             </div>

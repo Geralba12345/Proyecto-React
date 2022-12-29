@@ -1,5 +1,4 @@
 import './ItemListContainer.css'
-import ItemCount from "../ItemCount/ItemCount"
 import {productos} from '../../productosMock';
 import { useEffect, useState } from 'react';
 import ItemList from "../ItemList/ItemList";
@@ -36,7 +35,6 @@ export const ItemListContainer = () => {
     return(
         <article>
             <ItemList items={items}/>
-            <ItemCount stock={5} initial={1}/>
         </article>
     )
 }

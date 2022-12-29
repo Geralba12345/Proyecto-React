@@ -1,9 +1,26 @@
 import Card from 'react-bootstrap/Card';
 import ListGroup from 'react-bootstrap/ListGroup';
 import ItemCount from '../ItemCount/ItemCount';
+import {useContext} from "react"
+import {CartContext} from '../../context/CartContext'
 
 
 const ItemDetail = ( {product} ) => {
+
+
+  const {addToCart} = useContext (CartContext)
+
+
+  const onAdd = ( quantity ) => {
+
+    addToCart(
+      {
+        ...product,
+        quantity: quantity
+      }
+    )
+    
+  }
 
   
 
@@ -23,7 +40,7 @@ const ItemDetail = ( {product} ) => {
         <ListGroup.Item>${product.price}</ListGroup.Item>
       </ListGroup>
     </Card>
-    <ItemCount stock={5} initial={1}/>
+    <ItemCount onAdd={onAdd} stock={product.stock}/>
     </div>
   )
 }
