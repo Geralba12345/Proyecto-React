@@ -8,7 +8,7 @@ import {CartContext} from '../../context/CartContext'
 const ItemDetail = ( {product} ) => {
 
 
-  const {addToCart} = useContext (CartContext)
+  const {addToCart, getQuantityBiId,} = useContext (CartContext)
 
 
   const onAdd = ( quantity ) => {
@@ -21,6 +21,8 @@ const ItemDetail = ( {product} ) => {
     )
     
   }
+
+  const quantity = getQuantityBiId(product.id)
 
   
 
@@ -40,7 +42,7 @@ const ItemDetail = ( {product} ) => {
         <ListGroup.Item>${product.price}</ListGroup.Item>
       </ListGroup>
     </Card>
-    <ItemCount onAdd={onAdd} stock={product.stock}/>
+    <ItemCount onAdd={onAdd} stock={product.stock} initial={quantity}/>
     </div>
   )
 }

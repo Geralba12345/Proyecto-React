@@ -12,15 +12,19 @@ export const ItemListContainer = () => {
 
     const [ items, setItems ] = useState([])
 
+    const [ isLoading, setIsLoading ] = useState(false)
+
 
     useEffect(()=>{
+
+        setIsLoading(true)
 
         const productosFiltados = productos.filter( products => products.category === categoryName)
 
         const task = new Promise ((resolve,reject)=>{
             setTimeout(()=>{
                 resolve(categoryName ? productosFiltados : productos)
-            },2000)
+            },500)
         })
     
     
@@ -28,13 +32,20 @@ export const ItemListContainer = () => {
             .then((res)=>{setItems(res)})
             .catch((err)=>{console.log("Su solicitud fue rechazada")})
 
+        
+        setTimeout(()=>{
+            setIsLoading(false)
+        }, 2000)
+
     }, [categoryName] )
 
     
 
     return(
         <article>
-            <ItemList items={items}/>
+            {
+                isLoading ? <h2>Se están cargando los productos</h2> : <ItemList items={items}/>
+            }
         </article>
     )
 }
