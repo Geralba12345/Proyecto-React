@@ -67,13 +67,23 @@ const CartContextProvider = ({children}) => {
   }
 
 
+  const deleteProductById = (id) => {
+
+    const newArray = cart.filter( product => product.id !== id)
+
+    setCart( newArray )
+
+  }
+
+
 
   const data ={
     cart,
     addToCart,
     clearCart,
     getQuantityBiId,
-    getTotalPrice
+    getTotalPrice,
+    deleteProductById
   }
 
 

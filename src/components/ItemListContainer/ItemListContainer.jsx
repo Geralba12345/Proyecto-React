@@ -1,8 +1,9 @@
 import './ItemListContainer.css'
-import {productos} from '../../productosMock';
 import { useEffect, useState } from 'react';
 import ItemList from "../ItemList/ItemList";
 import { useParams } from 'react-router-dom';
+import { getDocs, collection, query, where } from "firebase/firestore";
+import { database } from '../../firebaseConfig';
 
 
 
@@ -19,20 +20,39 @@ export const ItemListContainer = () => {
 
         setIsLoading(true)
 
-        const productosFiltados = productos.filter( products => products.category === categoryName)
+        const itemCollection = collection( database, "Products")
 
-        const task = new Promise ((resolve,reject)=>{
-            setTimeout(()=>{
-                resolve(categoryName ? productosFiltados : productos)
-            },500)
+        if( categoryName ){
+            const q = query( itemCollection, where("category", "==", categoryName))
+            getDocs(q)
+        .then( (res) => {
+            const products = res.docs.map( product => {
+                return{
+                    ...product.data(),
+                    id: product.id
+                }
+            })
+            setItems(products)
         })
-    
-    
-        task
-            .then((res)=>{setItems(res)})
-            .catch((err)=>{console.log("Su solicitud fue rechazada")})
+        .catch( (err) => console.log(err))
 
+        }else{
         
+            getDocs(itemCollection)
+        .then( (res) => {
+            const products = res.docs.map( product => {
+                return{
+                    ...product.data(),
+                    id: product.id
+                }
+            })
+            setItems(products)
+        })
+        .catch( (err) => console.log(err))
+
+        }
+
+
         setTimeout(()=>{
             setIsLoading(false)
         }, 2000)
