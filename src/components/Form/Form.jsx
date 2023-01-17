@@ -1,6 +1,7 @@
 import {useState} from 'react'
 import {addDoc, collection, doc, serverTimestamp, updateDoc} from "firebase/firestore"
 import {database} from "../../firebaseConfig"
+import Button from 'react-bootstrap/Button';
 
 
 const Form = ({cart, getTotalPrice, setOrderId, clearCart}) => {
@@ -47,7 +48,7 @@ const Form = ({cart, getTotalPrice, setOrderId, clearCart}) => {
             <input type="text" placeholder="Ingrese su nombre" name="name" onChange={(event)=> setUserData ({...userData, name:event.target.value})} value={userData.name}/>
             <input type="text" placeholder="Ingrese su teléfono" name="phone" onChange={(event)=> setUserData ({...userData, phone:event.target.value})} value={userData.phone} />
             <input type="email" placeholder="Ingrese su e-mail" name="email" onChange={(event)=> setUserData ({...userData, email:event.target.value})} value={userData.email} />
-            <button type="submit">Finalizar compra</button>
+            <Button type="submit">Finalizar compra</Button>
         </form>
     </div>
   )

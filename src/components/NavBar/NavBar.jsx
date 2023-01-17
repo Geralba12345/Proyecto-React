@@ -1,6 +1,4 @@
-import {Button} from 'react-bootstrap';
 import {Container} from 'react-bootstrap';
-import {Form} from 'react-bootstrap';
 import {Nav} from 'react-bootstrap';
 import {Navbar} from 'react-bootstrap';
 import './NavBar.css';
@@ -29,14 +27,6 @@ export const NavBar = () => {
                             </Link>
                         </Nav>
                         <CartWidget />
-                        <Form className="d-flex">
-                            <Form.Control
-                                type="search"
-                                className="me-2"
-                                aria-label="Search"
-                            />
-                            <Button variant="outline-success" className='colorVerd'>Buscar</Button>
-                        </Form>
                     </Navbar.Collapse>
                 </Container>
             </Navbar>

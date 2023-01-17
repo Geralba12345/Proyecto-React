@@ -2,6 +2,10 @@ import {useContext, useState} from "react"
 import { Link } from "react-router-dom"
 import { CartContext } from "../../context/CartContext"
 import Form from "../Form/Form"
+import Button from 'react-bootstrap/Button';
+import Card from 'react-bootstrap/Card';
+
+
 
 const Cart = () => {
 
@@ -40,17 +44,25 @@ const Cart = () => {
         cart.map( item => (
           <div key={item.id}>
             <div>
-              <h2>{item.name}</h2>
-              <h2>{item.price}</h2>
-              <h2>{item.quantity} unidades</h2>
+              <Card style={{ width: '18rem' }}>
+                <Card.Img variant="top" src={item.img} />
+                <Card.Body>
+                  <Card.Title>{item.name}</Card.Title>
+                  <Card.Text>
+                    Precio: {item.price} c/u
+                  </Card.Text>
+                  <Card.Text>
+                  {item.quantity} unidades.
+                  </Card.Text>
+                  <Button variant="danger" onClick={()=>deleteProductById(item.id)}>Quitar producto</Button>
+                </Card.Body>
+              </Card>
             </div>
-            <button onClick={()=>deleteProductById(item.id)}>Quitar producto</button>
           </div>
         ))
       }
-
-      {cart.length < 1 && <h2>No hay elementos</h2>}
-
+      
+      {cart.length < 1 && <h2>No hay elementos. Debes comprar algo.</h2>}
 
       <div>
       <h2>Precio total: {getTotalPrice() > 0 ? getTotalPrice(): "No hay productos"}</h2>
@@ -65,17 +77,21 @@ const Cart = () => {
 
 
       cart.length > 0 &&
-        <div>
-        <button onClick={()=>clearCart()}>Limpiar productos</button>
-        <button onClick={openForm}>Comprar</button>
-      </div>
-
+        <div
+        style={{ display: 'flex', position: 'right'}}>
+          
+              <Button variant="secondary" onClick={()=>clearCart()}>Limpiar productos</Button>
+              <Button variant="success"  onClick={openForm}>Comprar</Button>
+            
+        </div>
       )
 
       }
 
 
     </div>
+
+    
   )
 }
 
