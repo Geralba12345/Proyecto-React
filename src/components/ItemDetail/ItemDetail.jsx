@@ -3,6 +3,7 @@ import ListGroup from 'react-bootstrap/ListGroup';
 import ItemCount from '../ItemCount/ItemCount';
 import {useContext} from "react"
 import {CartContext} from '../../context/CartContext'
+import './ItemDetail.css';
 
 
 const ItemDetail = ( {product} ) => {
@@ -30,7 +31,7 @@ const ItemDetail = ( {product} ) => {
   
   return (
     <div>
-    <Card style={{ width: '18rem' }}>
+    <Card style={{ width: '18rem' }} className='card'>
       <Card.Img variant="top" src={product.img} alt="Imagen de producto" />
       <Card.Body>
         <Card.Title>{product.name}</Card.Title>
@@ -41,8 +42,8 @@ const ItemDetail = ( {product} ) => {
       <ListGroup className="list-group-flush">
         <ListGroup.Item>${product.price}</ListGroup.Item>
       </ListGroup>
+      <ItemCount onAdd={onAdd} stock={product.stock} initial={quantity}/>
     </Card>
-    <ItemCount onAdd={onAdd} stock={product.stock} initial={quantity}/>
     </div>
   )
 }

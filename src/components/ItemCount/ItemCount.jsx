@@ -1,4 +1,7 @@
 import { useState, useEffect } from "react"
+import Button from 'react-bootstrap/Button';
+import './ItemCount.css';
+
 
 const ItemCount = ({ stock, initial = 0, onAdd }) => {
   const [counter, setCounter] = useState(initial)
@@ -23,11 +26,10 @@ const ItemCount = ({ stock, initial = 0, onAdd }) => {
 
   return (
     <div>
-      <h2>{counter}</h2>
-
-      <button onClick={increment}>+</button>
-      <button onClick={decrement}>-</button>
-      <button onClick={() => onAdd(counter)}>Agregar al carrito</button>
+      <Button variant="success" onClick={increment}>+</Button>
+      <Button variant="success" onClick={decrement}>-</Button>
+      <Button variant="secondary">{counter}</Button>
+      <Button variant="success" onClick={() => onAdd(counter)}>Agregar al carrito</Button>
     </div>
   )
 }
