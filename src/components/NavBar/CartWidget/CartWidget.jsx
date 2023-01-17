@@ -9,7 +9,9 @@ import { CartContext } from "../../../context/CartContext";
 export const CartWidget = () => {
     
 
-    const {cart} = useContext( CartContext )
+    const {cart} = useContext( CartContext)
+
+    
 
 
 
@@ -21,11 +23,12 @@ export const CartWidget = () => {
                         <BsCartCheck className="svg"/>
                     </div>
                     <div className="contenedor">
-                        <span>{cart.length}</span>
+                       <span>{cart.length}</span>
                     </div>
                 </div>
             </div>
         </Link>
+        
     )
 }
 

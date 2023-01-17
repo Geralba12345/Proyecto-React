@@ -66,6 +66,8 @@ const CartContextProvider = ({children}) => {
 
   }
 
+ 
+
 
   const deleteProductById = (id) => {
 

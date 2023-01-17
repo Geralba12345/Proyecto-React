@@ -1,9 +1,15 @@
-import {useContext, useState} from "react"
+import {useContext, useState, useEffect} from "react"
 import { Link } from "react-router-dom"
 import { CartContext } from "../../context/CartContext"
 import Form from "../Form/Form"
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
+import { getDoc,doc,collection } from "firebase/firestore";
+import { database } from "../../firebaseConfig";
+import Purchase from "../Purchase/Purchase";
+
+
+
 
 
 
@@ -15,6 +21,8 @@ const Cart = () => {
 
     const [orderId, setOrderId] = useState(null)
 
+    const [orders, setOrders] = useState({})
+
     const openForm = ()=>{
 
       if(cart.length > 0){
@@ -25,14 +33,41 @@ const Cart = () => {
 
     }
 
+    
+
+    useEffect(()=>{
+      if(orderId){
+      
+ 
+
+      const orderersCollection = collection(database, "orders")
+      const ref = doc( orderersCollection, orderId )
+
+      getDoc(ref)
+      .then( res => {
+        setOrders(
+          {
+            id: res.id,
+            ...res.data()
+          }
+        )
+      })
+    }
+
+  }, [orderId])
+
 
 
 
 
     if(orderId){
       return <div>
-        <h1>Tu ticket de compra es: {orderId}</h1>
-        <Link to={"/"}>Volver al catálogo</Link>
+        <Card body>Tu ticket de compra es: {orderId}
+        </Card>
+        <Purchase orders={orders}/>
+        <Link to={"/"}>
+        <Button variant="success">Volver al catálogo</Button>
+        </Link>
       </div>
     }
 
@@ -87,6 +122,7 @@ const Cart = () => {
       )
 
       }
+
 
 
     </div>
