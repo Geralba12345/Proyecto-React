@@ -1,70 +1,23 @@
-# Getting Started with Create React App
+### Bienvenido a ElekTroniKa, un local de tecnología
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+- Esta es una App realizada con el lenguaje React en el marco de un proyecto de la escuela Coderhouse;
+- Se trata de un E-commerce en el que podrás comprar productos relacionados a la tecnología, con énfasis en computadoras y celulares;
+- Se puede navegar entre categorías y seleccionar los productos que cada uno guste siempre y cuando no sobrepasen el stock;
 
-## Available Scripts
+#### Aclaraciones del Proyecto
 
-In the project directory, you can run:
+- El proyecto por el momento se encuentra en desarrollo, teniendo varias áreas en las que se puede aportar;
 
-### `npm start`
+##### Elementos para sumar en cuánto a lógica
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- Se plantea hacer un buscador que filtre por categoría y/o nombre del prodructo;
+- Agregar algunas categorías nuevas que permitan tener nuevos productos;
+- Lograr que en el carrito los productos puedan tener su propio precio con sus respectivos ítems (distinto al precio final), por ejemplo
+que si se compran 2 celulares y 2 computadoras, que se diga el total de cuanto es las 2 computadoras por separado y los dos celulares por separado, y no que muestre cuánto vale el producto sólo.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+##### Elementos para sumar en cuánto a estilos
 
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- En cuanto a estilos el sitio no está finalizado, se utilizó la librería React Boostrap pero al sistema de grillas por el momento
+le falta pulirse.
+- En un futuro se busca agregar Toastify y mejorar los Loaders para darle un poco más de armonía al sitio.
+- Algunas librerías están instaladas pero no todavía no se han utilizado porque la idea es utilizarlas en el futuro cercano (ejemplo: Formik, Yup y Axios).

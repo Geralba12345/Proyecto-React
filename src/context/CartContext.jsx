@@ -66,6 +66,17 @@ const CartContextProvider = ({children}) => {
 
   }
 
+  const getTotalItem = ()=>{
+
+    const totalProducts = cart.reduce((acc, element)=>{
+      return acc + element.quantity
+    }, 0)
+
+    return totalProducts
+
+
+  }
+
  
 
 
@@ -85,7 +96,8 @@ const CartContextProvider = ({children}) => {
     clearCart,
     getQuantityBiId,
     getTotalPrice,
-    deleteProductById
+    deleteProductById,
+    getTotalItem
   }
 
 

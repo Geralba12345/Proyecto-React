@@ -9,10 +9,9 @@ import { CartContext } from "../../../context/CartContext";
 export const CartWidget = () => {
     
 
-    const {cart} = useContext( CartContext)
+    const {getTotalItem} = useContext( CartContext)
 
     
-
 
 
     return (
@@ -23,7 +22,7 @@ export const CartWidget = () => {
                         <BsCartCheck className="svg"/>
                     </div>
                     <div className="contenedor">
-                       <span>{cart.length}</span>
+                       <span>{getTotalItem() > 0 ?getTotalItem () : 0}</span>
                     </div>
                 </div>
             </div>
