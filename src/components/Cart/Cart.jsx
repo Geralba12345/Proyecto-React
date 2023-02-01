@@ -4,9 +4,8 @@ import { CartContext } from "../../context/CartContext"
 import Form from "../Form/Form"
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
-import { getDoc,doc,collection } from "firebase/firestore";
+import { getDoc,doc,collection,} from "firebase/firestore";
 import { database } from "../../firebaseConfig";
-import Purchase from "../Purchase/Purchase";
 
 
 
@@ -23,6 +22,8 @@ const Cart = () => {
 
     const [orders, setOrders] = useState({})
 
+
+
     const openForm = ()=>{
 
       if(cart.length > 0){
@@ -32,6 +33,8 @@ const Cart = () => {
       }
 
     }
+
+  
 
     
 
@@ -62,9 +65,12 @@ const Cart = () => {
 
     if(orderId){
       return <div>
-        <Card body>Tu ticket de compra es: {orderId}
+        <Card body><h2>Tu ticket de compra es: {orderId}</h2>
+        <h4>{orders?.buyer?.name}</h4>
+        <h4>{orders?.buyer?.email}</h4>
+        <h4>{orders?.buyer?.phone}</h4>
+        <h4>Precio final: {orders?.total}</h4>
         </Card>
-        <Purchase orders={orders}/>
         <Link to={"/"}>
         <Button variant="success">Volver al catálogo</Button>
         </Link>
