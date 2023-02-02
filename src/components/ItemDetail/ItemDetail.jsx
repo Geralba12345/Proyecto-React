@@ -14,12 +14,16 @@ const ItemDetail = ( {product} ) => {
 
   const onAdd = ( quantity ) => {
 
-    addToCart(
-      {
-        ...product,
-        quantity: quantity
+    if(quantity > 0){
+      addToCart(
+            {
+              ...product,
+              quantity: quantity
+            }
+          )
+                 
       }
-    )
+      
     
   }
 
