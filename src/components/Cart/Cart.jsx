@@ -113,6 +113,7 @@ const Cart = () => {
 
 
       {buy ? (
+         cart.length > 0 &&
          <Form cart={cart} getTotalPrice={getTotalPrice} setOrderId={setOrderId} clearCart={clearCart}/>
       ) : (
 
