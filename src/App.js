@@ -5,7 +5,7 @@ import {BrowserRouter, Routes, Route} from "react-router-dom"
 import Form from "./components/Form/Form";
 import Cart from "./components/Cart/Cart";
 import CartContextProvider from "./context/CartContext";
-
+import Footer from "./components/Footer/Footer";
 
 function App() {
   return (
@@ -31,7 +31,12 @@ function App() {
         <Route path="*" element={<h1>Esta página no existe</h1>} />
 
 
+
+
       </Routes>
+
+      <Footer/>
+
 
 
       </CartContextProvider>
