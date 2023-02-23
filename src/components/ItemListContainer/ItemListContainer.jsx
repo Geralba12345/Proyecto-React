@@ -4,6 +4,7 @@ import ItemList from "../ItemList/ItemList";
 import { useParams } from 'react-router-dom';
 import { getDocs, collection, query, where } from "firebase/firestore";
 import { database } from '../../firebaseConfig';
+import { Spinner } from '@chakra-ui/react'
 
 
 
@@ -64,7 +65,13 @@ export const ItemListContainer = () => {
     return(
         <article>
             {
-                isLoading ? <h2>Se están cargando los productos</h2> : <ItemList items={items}/>
+                isLoading ? <Spinner
+                thickness='2px'
+                speed='0.65s'
+                emptyColor='gray.200'
+                color='black.500'
+                size='xl'
+              /> : <ItemList items={items}/>
             }
         </article>
     )

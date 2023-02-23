@@ -1,22 +1,35 @@
 import {Link} from "react-router-dom"
-import Card from 'react-bootstrap/Card';
 import './Item.css';
 import Button from 'react-bootstrap/Button';
+import { Card, Image, Stack, Heading, Text, CardBody, CardFooter, Divider, ButtonGroup,} from '@chakra-ui/react'
 
 const Item = ({element}) => {
     return (
       <div>
-        <Card style={{ width: '18rem'}} className='cartas'>
-          <Card.Img variant="top" src={element.img} alt="Imagen de producto" />
-          <Card.Body>
-            <Card.Title>{element.name}</Card.Title>
-            <Card.Text>
+        <Card maxW='sm'>
+          <CardBody>
+            <Image
+              src={element.img}
+              alt='Foto de producto'
+              borderRadius='lg'
+            />
+            <Stack mt='6' spacing='3'>
+              <Heading size='md'>{element.name}</Heading>
+              <Text color='blue.600' fontSize='2xl'>
               ${element.price}
-            </Card.Text>
+              </Text>
+            </Stack>
+          </CardBody>
+          <Divider />
+          <CardFooter>
+            <ButtonGroup spacing='2'>
             <Link variant="primary" to={`/ItemDetail/${element.id}`}>
-            <Button variant="success">Ver detalles</Button>
-            </Link>
-          </Card.Body>
+              <Button variant='solid' colorScheme='blue'>
+                Ver detalles
+              </Button>
+              </Link>
+            </ButtonGroup>
+          </CardFooter>
         </Card>
       </div>
     )
